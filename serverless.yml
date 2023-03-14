@@ -1,5 +1,4 @@
 service: my-store-app
-
 frameworkVersion: "3"
 
 provider:
