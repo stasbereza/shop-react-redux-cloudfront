@@ -22,6 +22,7 @@ export default function PageProductForm() {
   const removeProductCache = useRemoveProductCache();
   const { data, isLoading } = useAvailableProduct(id);
   const { mutateAsync: upsertAvailableProduct } = useUpsertAvailableProduct();
+
   const onSubmit = (values: AvailableProduct) => {
     const formattedValues = AvailableProductSchema.cast(values);
     const productToSave = id

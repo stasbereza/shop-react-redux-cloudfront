@@ -24,7 +24,7 @@ export default function Products() {
             sx={{ height: "100%", display: "flex", flexDirection: "column" }}
           >
             <CardMedia
-              sx={{ pt: "56.25%" }}
+              sx={{ pt: "80%" }}
               image={`../../../../images/${product.id}.jpeg`}
               title={product.title}
             />
