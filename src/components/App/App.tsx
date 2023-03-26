@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, useState, forwardRef } from "react";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "~/components/MainLayout/MainLayout";
@@ -11,7 +11,7 @@ import PageProducts from "~/components/pages/PageProducts/PageProducts";
 import { Typography, Snackbar } from "@mui/material";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
   ref
 ) {
@@ -19,8 +19,8 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 });
 
 function App() {
-  const [openSnackbar, setOpenSnackbar] = React.useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = React.useState<string>("");
+  const [openSnackbar, setOpenSnackbar] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   useEffect(() => {
     const resInterceptor = (response: AxiosResponse) => {
